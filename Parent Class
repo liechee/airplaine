@@ -1,0 +1,153 @@
+interface Airline {
+    // 10 common anttributes
+    name: string;
+    staffs: number;
+    typeOfFlight: string;
+    passengers: number;
+    luggages: number;
+    cost: number;
+    origin: string;
+    destination: string;
+    allowedPets: boolean;
+    ageLimit: number;
+    
+    // 10 common methods
+    getPassengerInfo(): string;
+    checkIn(): string;
+    addPassenger(): string;
+    removePassenger(): string;
+    addLuggage(weight:number): number;
+    removeLuggage(weight:number): number;
+    calculateTicketPrice(): number;
+    checkSeatAvailability(): number;
+    getGateInfo(): string;
+    generateTicket(): string;
+
+}
+
+
+// Polymorphism && Parent Class
+abstract class Airline{
+
+    public name: string;
+    public staffs: number;
+    public typeOfFlight: string;
+    public passengers: number;
+    public luggages: number;
+    public cost: number;
+    public origin: string;
+    public destination: string;
+    public allowedPets: boolean;
+    public ageLimit: number;
+
+    //sean 
+    flightDuration: number;
+    flightGate: string;
+
+    //Faith
+    luggageLimit: number;
+    seats: number;
+    age: number;
+
+    //Lyzza
+    PlaneSeat:string;
+    weight:number;
+    payed:boolean;
+
+    //kim
+    flightCode:number;
+    flightTerminal: number;
+
+    constructor(
+        name: string,
+        staffs: number,
+        typeOfFlight: string,
+        passengers: number,
+        luggages: number,
+        cost: number,
+        origin: string,
+        destination: string,
+        allowedPets: boolean,
+        ageLimit: number,
+
+        // Sean
+        flightDuration: number,
+        flightGate: string,
+
+        //Faith
+        luggageLimit: number,
+        seats: number,
+        age: number,
+
+        //Lyzza
+        PlaneSeat:string,
+        weight:number,
+        payed:boolean,
+
+        //kim
+        flightCode:number,
+        flightTerminal: number,
+        
+        ){
+            this.name = name;
+            this. staffs = staffs;
+            this.typeOfFlight = typeOfFlight;
+            this.passengers = passengers;
+            this.luggages = luggages;
+            this.cost = cost;
+            this.origin = origin;
+            this.destination = destination;
+            this.allowedPets = allowedPets;
+            this.ageLimit = ageLimit;
+
+            //sean
+            this.flightDuration = flightDuration;
+            this.flightGate = flightGate;
+
+            //Faith
+            this.luggageLimit = luggageLimit;
+            this.seats = seats;
+            this.age = age;
+
+            //Lyzza
+            this.PlaneSeat = PlaneSeat;
+            this.weight = weight;
+            this.payed = payed;
+
+            //kim
+            this.flightCode = flightCode
+            this.flightTerminal = flightTerminal
+
+        }
+
+    getPassengerInfo(){
+        return( `Passenger info: ${this.name}`)
+    };
+    checkIn() {
+        return( `Successfullly checked in for flight`)
+    };
+    addPassenger() {
+        return( `Succesfuly added a passenger!`)
+    };
+    removePassenger() {
+        return( `Succesfuly removed a passenger!`)
+    };
+    addLuggage() {
+        return( this.luggages++)
+    };
+    removeLuggage() {
+        return( this.luggages--)
+    };
+    calculateTicketPrice() {
+        return( this.cost)
+    };
+    checkSeatAvailability(){
+        return( this.passengers)
+    };
+    getGateInfo(){
+        return( `some letter for the gate info`)
+    };
+    generateTicket(){
+        return( `some ticket info`)
+    };
+};
